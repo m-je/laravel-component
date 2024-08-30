@@ -1,0 +1,71 @@
+$(".demo").bootstrapSwitch({
+  // The checkbox state
+  state: true,
+  // null, 'mini', 'small', 'normal', 'large'
+  size: null,
+  // Enable animation
+  animate: true,
+  // Disabled
+  disabled: false,
+  // Readonly
+  readonly: false,
+  // Indeterminate state
+  indeterminate: false,
+  // Inverse switch direction
+  inverse: false,
+  // Allow this radio button to be unchecked by the user
+  radioAllOff: false,
+  // Color of the left side of the switch
+  onColor: 'primary',
+  // Color of the right side of the switch
+  offColor: 'default',
+  // Text of the left side of the switch
+  onText: 'ON',
+  // Text of the right side of the switch
+  offText: 'OFF',
+  // Text of the center handle of the switch
+  labelText: '&nbsp',
+  // Width of the left and right sides in pixels
+  handleWidth: 'auto',
+  // Width of the center handle in pixels
+  labelWidth: 'auto',
+  // Global class prefix
+  baseClass: 'bootstrap-switch',
+  // Container element class(es)
+  wrapperClass: 'wrapper',
+  // Callback function to execute on initialization
+  onInit: () => {},
+  // Callback function to execute on switch state change.
+  // If false is returned, the status will be reverted, otherwise nothing changes
+  onSwitchChange: () => {}
+});
+5. If you want to override the global settings:
+
+$.fn.bootstrapSwitch.defaults.size = 'large';
+6. API methods:
+// In Bootstrap Switch, every option is also a method
+$('.demo').bootstrapSwitch('OPTION', VALUE);
+// toggle the state
+$('.demo').bootstrapSwitch('toggleState');
+// toggle the animation
+$('.demo').bootstrapSwitch('toggleAnimate');
+// toggle the disabled state
+$('.demo').bootstrapSwitch('toggleDisabled');
+// toggle the Readonly state
+$('.demo').bootstrapSwitch('toggleReadonly');
+// toggle the Indeterminate state
+$('.demo').bootstrapSwitch('toggleIndeterminate');
+// toggle the Inverse option
+$('.demo').bootstrapSwitch('toggleInverse');
+// destroy the plugin
+$('.demo').bootstrapSwitch('destroy');
+
+7. The plugin provides an event that will triggered on switch state change.
+
+view source
+// Triggered on switch state change.
+$('demo').on('switchChange.bootstrapSwitch', function(event, state) {
+  console.log(this); // DOM element
+  console.log(event); // jQuery event
+  console.log(state); // true | false
+});
